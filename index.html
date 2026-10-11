@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pac-Man</title>
+    <meta name="description" content="Pac-Man you can play right inside a tweet.">
+    <meta name="twitter:card" content="player">
+    <meta name="twitter:title" content="Pac-Man">
+    <meta name="twitter:description" content="Pac-Man you can play right inside a tweet. Click to play.">
+    <meta name="twitter:image" content="https://chainsnatcher.github.io/pacman/player-card.png">
+    <!-- Increment v when changing the game so X refreshes the embedded player. -->
+    <meta name="twitter:player" content="https://chainsnatcher.github.io/pacman/?embed=1&v=1">
+    <meta name="twitter:player:width" content="480">
+    <meta name="twitter:player:height" content="480">
+    <meta property="og:title" content="Pac-Man">
+    <meta property="og:description" content="Pac-Man you can play right inside a tweet.">
+    <meta property="og:image" content="https://chainsnatcher.github.io/pacman/player-card.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script>
+      if (new URLSearchParams(location.search).get('embed') === '1') {
+        document.documentElement.classList.add('embed');
+      }
+    </script>
+    <style>
+      html, body { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
+      body { display: flex; flex-direction: column; font-family: 'Press Start 2P', monospace; color: #fff; }
+      header { text-align: center; padding: 18px 16px 10px; }
+      header h1 { margin: 0; font-size: 22px; color: #ffe600; letter-spacing: 2px; }
+      header p { margin: 10px 0 0; font-size: 9px; color: #aaa; line-height: 1.6; }
+      #wrap { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 0 16px 16px; }
+      canvas { display: block; touch-action: none; cursor: pointer; outline: none; image-rendering: auto; }
+      .embed header { display: none; }
+      .embed #wrap { padding: 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>PAC-MAN</h1>
+      <p>Arrows / WASD on desktop. Swipe on mobile.</p>
+    </header>
+    <div id="wrap"><canvas id="game" tabindex="0" aria-label="Pac-Man game"></canvas></div>
+    <script src="game.js"></script>
+  </body>
+</html>
